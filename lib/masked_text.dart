@@ -119,9 +119,8 @@ class MaskedTextController extends TextEditingController {
   }
 }
 
-/// Mask for monetary values.
-class MoneyMaskedTextController extends TextEditingController {
-  MoneyMaskedTextController(
+class MaskedNumberController extends TextEditingController {
+  MaskedNumberController(
       {double initialValue = 0.0,
       this.decimalSeparator = ',',
       this.thousandSeparator = '.',
