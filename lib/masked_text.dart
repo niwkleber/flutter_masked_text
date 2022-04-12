@@ -144,7 +144,7 @@ class MoneyMaskedTextController extends TextEditingController {
   final String leftSymbol;
   final int precision;
 
-  Function afterChange = (String maskedValue, double rawValue) {};
+  Function afterChange = (String maskedValue, double? rawValue) {};
 
   double _lastValue = 0.0;
 
