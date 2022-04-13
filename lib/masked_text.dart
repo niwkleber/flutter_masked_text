@@ -180,14 +180,15 @@ class MaskedNumberController extends TextEditingController {
   }
 
   double? get numberValue {
-    List<String> parts =
-        _getOnlyNumbers(this.text).split('').toList(growable: true);
-    if (parts.isEmpty) {
+    String text = _getOnlyNumbers(this.text);
+    if (text.isEmpty) {
       return null;
     }
 
-    parts.insert(parts.length - precision, '.');
+    text = text.padLeft(precision + 1, '0');
+    List<String> parts = text.split('').toList(growable: true);
 
+    parts.insert(parts.length - precision, '.');
     return double.parse(parts.join());
   }
 
